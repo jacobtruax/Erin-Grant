@@ -7,9 +7,12 @@ const addMovement = function() {
 
   sections.forEach(section => {
     const topSection = section.offsetTop
+
     const midSection = topSection + (section.offsetHeight / 2)
+    // console.log(midSection)
 
     const distanceToSection = midViewport - midSection
+    console.log(distanceToSection)
 
     const image = section.querySelector("img")
 
