@@ -22,7 +22,7 @@ const addMovement = function() {
 
 addMovement()
 
-document.addEventListener("scroll", function() {
+mainTag.addEventListener("scroll", function() {
   addMovement()
 })
 
