@@ -1,9 +1,10 @@
 const sections = document.querySelectorAll("section")
 const mainTag = document.querySelector("main")
+const divTag = document.querySelector("div.Loop")
 
 const addMovement = function() {
-  const topViewport = mainTag.offsetTop
-  const midViewport = topViewport + (mainTag.offsetHeight / 2)
+  const topViewport = divTag.offsetTop
+  const midViewport = topViewport + (divTag.offsetHeight / 2)
 
   sections.forEach(section => {
     const topSection = section.offsetTop

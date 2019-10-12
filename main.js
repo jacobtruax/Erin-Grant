@@ -8,7 +8,7 @@ var doc = window.document,
   i = 0;
 
 function getScrollPos () {
-  return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
+  return (context.offsetTop || context.scrollTop) - (context.clientTop || 0);
 }
 
 function setScrollPos (pos) {
