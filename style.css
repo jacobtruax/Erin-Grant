@@ -1,11 +1,26 @@
+
+@font-face {
+  font-family: 'Digestive';
+  src: url('fonts/Digestive_v0.9-four_web.eot'); /* IE9 Compat Modes */
+  src: url('fonts/Digestive_v0.9-four_web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/Digestive_v0.9-four_web.woff') format('woff');
+}
+
+h1 {
+  font-family: "Digestive";
+  font-size: 200px;
+  text-transform: uppercase;
+}
+
 html,
 body {
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 body {
-  color: #000;
+  color: #050505;
+  background-color: #fcfcfc;
 }
 
 main {
@@ -13,6 +28,7 @@ main {
   position: relative;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 header {
@@ -20,15 +36,24 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  text-align: center;
-  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  transform: translateY(-25%);
 }
 
 .Loop {
   position: absolute;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+  box-sizing: content-box;
 }
 
 section {
@@ -38,7 +63,12 @@ section {
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
+  transform: translateX(10%);
+}
+
+section:nth-of-type(odd) {
+  transform: translateX(-10%);
 }
 
 ::scrollbar {
@@ -50,9 +80,28 @@ section div {
   z-index: 2;
   text-align: center;
   width: 100%;
+  display: none;
 }
 
 section img {
-  position: relative;
+  position: absolute;
   width: 50%;
+  transition: transform .1s;
+  /* filter: blur(10px); */
+}
+
+/* section img:hover {
+  filter: blur(0px);
+  cursor: pointer;
+  width: 45%;
+} */
+
+.blur {
+  filter: blur(8px);
+  z-index: 1000;
+  width: 52%;
+}
+
+.opacity {
+  visibility: hidden;
 }
