@@ -9,6 +9,7 @@
 h1 {
   font-family: "Digestive";
   font-size: 200px;
+  font-size: calc(45px + (200 - 45) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
 }
 
@@ -19,7 +20,7 @@ body {
 }
 
 body {
-  color: #050505;
+  color: #161616;
   background-color: #fcfcfc;
 }
 
@@ -100,6 +101,12 @@ section img {
   filter: blur(8px);
   z-index: 1000;
   width: 52%;
+}
+
+.blur2 {
+  filter: blur(8px);
+  z-index: 0;
+  width: 51%;
 }
 
 .opacity {

@@ -27,23 +27,32 @@ const addMovement = function() {
 
     let rotation = distanceToSection / 100
     let skew = -1 * distanceToSection / 50
-    let opacity = distanceToSection / 800
-    let top = (distanceToSection / 20) + 50
-    let left = (distanceToSection / 10) + 375
+    let opacity = distanceToSection / 1000
+    let negOpacity = -1 * distanceToSection / 600
+    let top = -1 * (distanceToSection / 20) + 120
+    let left = (distanceToSection / 20) + 395
     // let contentDist = -1 * distanceToSection / 2
 
-    images.forEach((image, index) => {
-      if(index % 2 == 1){
+    images.forEach((image, index, array) => {
+      if(index === array.length - 1){
         image.style.opacity = `${opacity}`
         image.style.transform = `rotate(${rotation}deg)`
-        image.style.transform = `skewX(${skew}deg)`
+        // image.style.transform = `skewX(${skew}deg)`
         image.style.bottom = `${top}px`
         image.style.left = `${left}px`
       }
 
-      if(index % 2 == 0){
+      if(index === array.length - 2){
+        image.style.opacity = `${negOpacity}`
         image.style.transform = `rotate(${rotation}deg)`
-        image.style.transform = `skewX(${skew}deg)`
+        // image.style.transform = `skewX(${skew}deg)`
+        // image.style.bottom = `${top}px`
+        // image.style.left = `${left}px`
+      }
+
+      if(index === array.length - 3){
+        image.style.transform = `rotate(${rotation}deg)`
+        // image.style.transform = `skewX(${skew}deg)`
       }
     })
 
