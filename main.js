@@ -69,7 +69,7 @@ const addMovement = function() {
     // let contentDist = -1 * distanceToSection / 2
 
     divs.forEach((div, index) => {
-      div.style.transform = `rotateX(${rotation}deg) rotateY(${negRotation}deg) rotateZ(${rotation}deg) translateZ(50px)`
+      div.style.transform = `rotateX(${rotation}deg) rotateY(${negRotation}deg) rotateZ(${rotation}deg) translateZ(15px) skewX(${smallSkew}deg)`
       div.style.cursor = "pointer"
     })
 

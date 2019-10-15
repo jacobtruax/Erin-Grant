@@ -25,15 +25,28 @@ h1 {
   font-size: 200px;
   font-size: calc(45px + (200 - 45) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
-  text-shadow:0px 0px 30px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(0, 0, 0, 0.2);
+  /* text-shadow:0px 0px 30px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(0, 0, 0, 0.2); */
 }
 
 h2 {
   font-family: "Ogg-Roman";
-  font-size: 100px;
-  color: #b90909;
-  text-shadow:0px 0px 30px rgba(255, 0, 0, 0.2), 0px 0px 30px rgba(255, 0, 0, 0.2);
+  font-size: 25px;
+  line-height: 1em;
+  /* color: #b90909; */
+  text-transform: uppercase;
+  /* text-shadow:0px 0px 30px rgba(255, 0, 0, 0.2), 0px 0px 30px rgba(255, 0, 0, 0.2); */
   /* color: #ead03a; */
+  color: #161616;
+}
+
+h3 {
+  font-family: "Ogg-Roman";
+  line-height: 1em;
+  font-size: 25px;
+  /* color: #b90909; */
+  /* text-shadow:0px 0px 30px rgba(255, 0, 0, 0.2), 0px 0px 30px rgba(255, 0, 0, 0.2); */
+  /* color: #ead03a; */
+  color: #161616;
 }
 
 h4 {
@@ -234,17 +247,26 @@ section div {
   z-index: 5;
   /* transform: translateZ(100px); */
   text-align: center;
-  width: 50%;
-  height: 50%;
-  /* background-color: rgba(252,252,252, 0.8) */
+  width: 49.5%;
+  height: 64.75%;
+  background-color: rgba(252,252,252, 1);
   opacity: 0 !important;
 
   transition: opacity .3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  border: 1px;
+  border-color: #161616;
+  border-style: solid;
 }
 
-section div h2 {
+/* section div h2 {
   transform: translateY(-50%);
-}
+} */
 
 .open {
   opacity: 1 !important;
