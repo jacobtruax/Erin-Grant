@@ -9,24 +9,49 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.js"></script>
-
-
 </head>
 
 <body>
 
-<aside class="info">
+<!-- Video ============================ -->
+<aside id="closeBlock" class="closeBlock">
+  <h4 id="closeTag">close</h4>
+</aside>
+
+<div id="block" class="block"></div>
+
+<div id="videoPage" class="videoPage">
+  <h2 id="vidTitle">Junglepussy</h2>
+  <h3 id="vidName">Somebody</h3>
+  <h2 id="vidCred">Director / Editor | Erin Grant</h2>
+  <p id="vidDesc"></p>
+  <div id="videoSRC" style="padding:56.25% 0 0 0;position:relative;"><iframe id="videoFrame" src="https://player.vimeo.com/video/244458676?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+
+<!-- Bio =============================  -->
+
+
+<div class="bio">
+  <h5 id="name">Erin Grant</h5>
+  <h5 id="director">Director</h5>
+  <a id="mail" href="#" mailto="grant.erin1@gmail.com">Erin.Grant1@gmail.com</a>
+  <h5 id="number">715.271.8379</h5>
+</div>
+
+<div id="circle2" class="circle2"></div>
+
+<aside id="infoBlock" class="info">
   <div id="circle" class="circle"></div>
   <h4 id="info">i</h4>
 </aside>
 
+<!-- Header =========================== -->
+
 <header>
-  <div id="para_div">
-    <h1 id="real">Erin Grant</h1>
-    <h1 id="refl">Erin Grant</h1>
-  </div>
+  <h1 id="real">Erin Grant</h1>
 </header>
+
+<!-- Main ============================= -->
 
 <main>
 <div class="Loop js-loop">
@@ -202,7 +227,7 @@
 
 </body>
 
-<script src="cursor.js"></script>
+<script src="CSSPlugin.min.js"></script>
 <script src="https://unpkg.com/in-view@0.6.1/dist/in-view.min.js"></script>
 <!-- <script src="blur.js"></script> -->
 <script src="main.js"></script>
