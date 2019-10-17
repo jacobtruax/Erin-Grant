@@ -102,6 +102,8 @@ aside.info {
   justify-content: center;
   z-index: 22;
 
+  visibility: hidden;
+
   cursor: pointer;
 }
 
@@ -114,6 +116,7 @@ aside.info {
   border-style: solid;
   border-radius: 50%;
   cursor: pointer;
+  visibility: hidden;
 
   transition: transform .3s ease;
 }
@@ -267,6 +270,11 @@ div.bio a {
 }
 
 /* Images =========================== */
+
+.outOfView {
+  visibility: hidden;
+}
+
 main {
   height: 100%;
   position: relative;

@@ -139,6 +139,8 @@ const addMovement = function() {
     let left = (distanceToSection / 20) + 395
     // let contentDist = -1 * distanceToSection / 2
 
+
+
     divs.forEach((div, index) => {
       div.style.transform = `rotateX(${rotation}deg) rotateY(${negRotation}deg) rotateZ(${rotation}deg) translateZ(15px) skewX(${smallSkew}deg)`
       div.style.cursor = "pointer"
@@ -180,6 +182,7 @@ const addMovement = function() {
         image.style.cursor = "pointer"
         // image.classList.add("blurImage")
       })
+
 
 
 
@@ -338,9 +341,11 @@ Math.easeInOutQuad = function (t, b, c, d) {
 // Load animation ==========================
 var tlLoad = new TimelineMax({delay: .25, onStart:scrollOne})
 
-TweenMax.set("#real", {autoAlpha: 0})
+TweenMax.set("#real", {autoAlpha: 0, visibility: "hidden"})
+TweenMax.set("#circle", {visibility: "hidden"})
 
-tlLoad.fromTo("#real", 2.2, {y:10}, {autoAlpha:1, y: -30, ease:Power4.easeOut})
+tlLoad.fromTo("#real", 2.2, {y:10}, {visibility: "visible", autoAlpha:1, y: -30, ease:Power4.easeOut})
+.to("#circle", 0.1, {visibility: "visible"}, 0)
 .fromTo("#infoBlock", 1, {x:100}, {autoAlpha:1, x: 0, ease:Power4.easeOut}, 1)
 //
 //
