@@ -177,6 +177,8 @@ aside.closeBlock {
   justify-content: center;
   z-index: 19;
 
+  visibility: hidden;
+
   cursor: pointer;
 }
 
@@ -222,7 +224,7 @@ div.videoPage {
 
 div.videoPage h2 {
   margin-bottom: 8px;
-  
+
 }
 
 div.videoPage h3 {

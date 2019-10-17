@@ -1,4 +1,6 @@
 const sections = document.querySelectorAll("section")
+const images1 = document.querySelectorAll("img")
+const divs1 = document.querySelectorAll("div.info")
 const divTag = document.querySelector("div.Loop")
 const mainTag = document.querySelector("main")
 const realTag = document.getElementById("real")
@@ -43,10 +45,10 @@ tlInfo.timeScale(1)
 tlInfo.to("#circle2", .1, {autoAlpha:1, ease:Power2.easeOut})
 .to("#circle2", 1.4, {borderRadius:'0%', top: 0, right: 0, width:"100vw", height: "100vh", ease:Power4.easeOut})
 .to(".bio", .1, {visibility: "visible"}, 0)
-.fromTo("#name", 1, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.5)
-.fromTo("#director", 1, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.7)
-.fromTo("#mail", 1, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.9)
-.fromTo("#number", 1, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 1.1)
+.fromTo("#name", 1.2, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.6)
+.fromTo("#director", 1.2, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.8)
+.fromTo("#mail", 1.2, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 1)
+.fromTo("#number", 1.2, {y:100}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 1.2)
 
 infoTag.addEventListener("click", function(event) {
   event.preventDefault();
@@ -62,6 +64,10 @@ infoTag.addEventListener("click", function(event) {
 // Video ==============================
 const closeBlock = document.querySelector("aside.closeBlock")
 const closeTag = document.getElementById("closeTag")
+const vidTitle = document.getElementById("vidTitle")
+const vidName = document.getElementById("vidName")
+const vidCred = document.getElementById("vidCred")
+const vidDesc = document.getElementById("vidDesc")
 
 closeBlock.addEventListener("mouseover", function() {
   closeBlock.style.cursor = "pointer"
@@ -77,20 +83,22 @@ closeBlock.addEventListener("click", function() {
   tlVideo.reverse();
 })
 
-TweenMax.set('#closeTag',{autoAlpha:0})
+TweenMax.set('#closeTag',{autoAlpha:0, visibility: "hidden"})
 TweenMax.set('#vidTitle',{autoAlpha:0})
 TweenMax.set('#vidName',{autoAlpha:0})
 TweenMax.set('#vidCred',{autoAlpha:0})
 TweenMax.set('#vidDesc',{autoAlpha:0})
 TweenMax.set('#videoSRC',{autoAlpha:0, visibility: "hidden"})
 TweenMax.set('#videoPage',{visibility: "hidden"})
+TweenMax.set(images1,{autoAlpha: 1})
+TweenMax.set(divs1,{autoAlpha: 1})
 
 var tlVideo = new TimelineMax({paused: true, reversed: true});
 tlVideo.timeScale(1)
 
-tlVideo.to("#block", 1.7, {height: "100vh", ease:Power4.easeOut})
+tlVideo.to("#block", 1.5, {height: "100vh", ease:Power4.easeOut})
 .to("#videoPage", .1, {visibility:"visible"}, 0)
-.fromTo("#closeTag", .7, {}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, .5)
+.fromTo("#closeTag", .7, {}, {visibility:"visible", autoAlpha:1, y: 0, ease:Power1.easeOut}, .5)
 .fromTo("#vidTitle", .4, {y:10}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.3)
 .fromTo("#vidName", .4, {y:10}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.5)
 .fromTo("#vidCred", .4, {y:10}, {autoAlpha:1, y: 0, ease:Power1.easeOut}, 0.7)
@@ -151,6 +159,13 @@ const addMovement = function() {
         // tlVideo.play()
         console.log("click")
           tlVideo.play()
+          bg = section.getAttribute("data-vid")
+          var video = document.getElementById('videoFrame');
+          video.src = bg;
+          vidTitle.innerHTML = section.getAttribute("data-title")
+          vidName.innerHTML = section.getAttribute("data-name")
+          vidCred.innerHTML = section.getAttribute("data-cred")
+          vidDesc.innerHTML = section.getAttribute("data-desc")
       })
     })
 
