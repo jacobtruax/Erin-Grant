@@ -159,6 +159,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  visibility: hidden;
 }
 
 header h1 {
@@ -270,10 +272,6 @@ div.bio a {
 }
 
 /* Images =========================== */
-
-.outOfView {
-  visibility: hidden;
-}
 
 main {
   height: 100%;
